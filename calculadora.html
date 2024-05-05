@@ -84,40 +84,4 @@
 </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora Matemática</title>
-</head>
-<body>
-<div class="calculator">
-    <input type="text" id="number1" placeholder="Insira o primeiro número">
-    <input type="text" id="number2" placeholder="Insira o segundo número">
-    <input type="button" value="MMC e MDC" onclick="calculateMMCandMDC()">
-    <div id="result"></div>
-</div>
-<script>
-    function gcd(a, b) {
-        if (b === 0) {
-            return a;
-        } else {
-            return gcd(b, a % b);
-        }
-    }
 
-    function lcm(a, b) {
-        return (a * b) / gcd(a, b);
-    }
-
-    function calculateMMCandMDC() {
-        var number1 = parseInt(document.getElementById('number1').value);
-        var number2 = parseInt(document.getElementById('number2').value);
-        var mmc = lcm(number1, number2);
-        var mdc = gcd(number1, number2);
-        document.getElementById('result').innerHTML = "MMC: " + mmc + ", MDC: " + mdc;
-    }
-</script>
-</body>
-</html>
